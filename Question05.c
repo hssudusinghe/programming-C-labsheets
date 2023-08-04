@@ -3,18 +3,15 @@
 
 int main()
 {
-    int first, second;
-    printf("Enter the first integer");
-    scanf("%d",&first);
-    printf("Enter the second integer");
-    scanf("%d",&second);
-    if(first % second==0)
+    int number, reversednumber=0, remainder;
+    printf("Enter a number:");
+    scanf("%d", &number);
+    do
     {
-        printf("%d is a multiple of %d\n",first,second);
+        remainder=number%10;
+        reversednumber=reversednumber*10+remainder;
     }
-    else
-    {
-        printf("%d is not a multiple of %d\n",first,second);
-    }
+    while(number!=0);
+    printf("Reversed number: %d\n", reversednumber);
     return 0;
 }

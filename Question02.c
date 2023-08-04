@@ -1,27 +1,31 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+
 int main()
 {
-int n1,n2,n3;
-printf("Enter three integer numbers:\n");
-scanf("%d %d %d", &n1,&n2,&n3);
-int largest=n1;
-int smallest=n1;
-if(n2>largest){
-largest=n2;
-}
-if(n3>largest)
-{
-largest=n3;
-}
-if(n2<smallest)
-{
-smallest=n2;
-}
-if(n3<smallest)
-{
-smallest=n3;
-}
-printf("Largest number: %d\n",largest);
-printf("Smallest number: %d\n",smallest);
-return 0;
+    int marks[10];
+    int total=0;
+    int i;
+    //marks
+    printf("Enter the 10 marks\n");
+    for(i=0;i<10;i++)
+    {
+        printf("Mark %d:",i+1);
+        scanf("%d", &marks[i]);
+        total+=marks[i];
+    }
+    float average=(float)total/10;
+    printf("Total marks: %d\n", total);
+    printf("Average marks: %d\n", average);
+    if(average<50)
+    {
+        printf("Fail!\n");
+    }
+    else
+    {
+        printf("Pass!\n");
+    }
+
+    return 0;
 }
